@@ -1,6 +1,6 @@
 package site.site8.springboot.model;
 
-public class learnResource {
+public class LearnResource {
     private Long id;
 
     private String author;
