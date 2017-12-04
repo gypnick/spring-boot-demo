@@ -62,7 +62,7 @@ public interface SysRoleMapper {
             "sl.id, sl.role, sl.description, sl.available",
             "from sysrole sl",
             "LEFT JOIN sysuserrole s on(s.uid=#{uId,jdbcType=INTEGER})",
-            "and s.roleId=sl.id"
+            "where s.roleId=sl.id"
     })
     @Results({
             @Result(column="id", property="id", jdbcType=JdbcType.INTEGER, id=true),
