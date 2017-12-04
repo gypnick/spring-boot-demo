@@ -52,8 +52,10 @@
         15，delimitAllColumns：设置是否所有生成的SQL中的列名都使用标识符引起来。默认为false，delimitIdentifiers参考context的属性
 -->
         <!--<table tableName="learn_resource" domainObjectName="LearnResource" ></table>-->
-        <table tableName="class" domainObjectName="Class_" ></table>
-        <table tableName="student" domainObjectName="Student" ></table>
+        <!--<table tableName="class" domainObjectName="Class_" ></table>-->
+        <table tableName="SysRole" domainObjectName="SysRole" ></table>
+        <table tableName="SysUserRole" domainObjectName="SysUserRole" ></table>
+        <table tableName="UserInfo" domainObjectName="UserInfo" ></table>
     </context>
 </generatorConfiguration>
 

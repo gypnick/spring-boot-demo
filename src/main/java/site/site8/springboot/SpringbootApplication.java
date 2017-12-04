@@ -2,6 +2,7 @@ package site.site8.springboot;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import com.github.pagehelper.PageHelper;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,7 +13,6 @@ import javax.sql.DataSource;
 import java.util.Properties;
 
 @SpringBootApplication
-
 public class SpringbootApplication {
 
 	public static void main(String[] args) {
