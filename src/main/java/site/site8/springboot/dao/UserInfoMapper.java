@@ -62,6 +62,22 @@ public interface UserInfoMapper {
     })
     UserInfo selectByPrimaryKey(Integer uid);
 
+    @Select({
+            "select",
+            "u.uid, u.username, u.name, u.password, u.salt",
+            "from userinfo u",
+            "LEFT JOIN sysuserrole s on (s.roleId=#{rId,jdbcType=INTEGER})",
+            "where u.uid = s.uid"
+    })
+    @Results({
+            @Result(column="uid", property="uid", jdbcType=JdbcType.INTEGER, id=true),
+            @Result(column="username", property="username", jdbcType=JdbcType.VARCHAR),
+            @Result(column="name", property="name", jdbcType=JdbcType.VARCHAR),
+            @Result(column="password", property="password", jdbcType=JdbcType.VARCHAR),
+            @Result(column="salt", property="salt", jdbcType=JdbcType.VARCHAR),
+    })
+    List<UserInfo> getUserByRolesId(Integer rId);
+
     @UpdateProvider(type=UserInfoSqlProvider.class, method="updateByExampleSelective")
     int updateByExampleSelective(@Param("record") UserInfo record, @Param("example") UserInfoExample example);
 

@@ -53,7 +53,10 @@ public interface SysRoleMapper {
         @Result(column="id", property="id", jdbcType=JdbcType.INTEGER, id=true),
         @Result(column="role", property="role", jdbcType=JdbcType.VARCHAR),
         @Result(column="description", property="description", jdbcType=JdbcType.VARCHAR),
-        @Result(column="available", property="available", jdbcType=JdbcType.CHAR)
+        @Result(column="available", property="available", jdbcType=JdbcType.CHAR),
+            @Result(property = "users",column = "id",many = @Many(select = "site.site8.springboot.dao.UserInfoMapper.getUserByRolesId")),
+            @Result(property = "sysPermissions",column = "id",many = @Many(select = "site.site8.springboot.dao.SysPermissionMapper.getPermissionByRoleId"))
+
     })
     SysRole selectByPrimaryKey(Integer id);
 
@@ -71,6 +74,22 @@ public interface SysRoleMapper {
             @Result(column="available", property="available", jdbcType=JdbcType.CHAR)
     })
     List<SysRole> getRoles(Integer uId);
+
+
+    @Select({
+            "select",
+            "sl.id, sl.role, sl.description, sl.available",
+            "from sysrole sl",
+            "LEFT JOIN sysrolepermission srp  on(srp.permissionId=#{pId,jdbcType=INTEGER})",
+            "where srp.roleId=sl.id"
+    })
+    @Results({
+            @Result(column="id", property="id", jdbcType=JdbcType.INTEGER, id=true),
+            @Result(column="role", property="role", jdbcType=JdbcType.VARCHAR),
+            @Result(column="description", property="description", jdbcType=JdbcType.VARCHAR),
+            @Result(column="available", property="available", jdbcType=JdbcType.CHAR)
+    })
+    List<SysRole> getRolesBypermissionId(Integer pId);
 
 
     @UpdateProvider(type=SysRoleSqlProvider.class, method="updateByExampleSelective")

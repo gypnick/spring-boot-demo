@@ -4,4 +4,5 @@ import site.site8.springboot.model.UserInfo;
 
 public interface UserInfoService {
     UserInfo queryUserInfoByUid(Integer uId);
+    UserInfo queryUserInfoByUserName(String userName);
 }

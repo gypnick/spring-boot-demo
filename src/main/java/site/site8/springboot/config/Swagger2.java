@@ -1,4 +1,4 @@
-package site.site8.springboot;
+package site.site8.springboot.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

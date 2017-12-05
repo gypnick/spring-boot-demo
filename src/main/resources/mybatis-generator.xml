@@ -53,9 +53,8 @@
 -->
         <!--<table tableName="learn_resource" domainObjectName="LearnResource" ></table>-->
         <!--<table tableName="class" domainObjectName="Class_" ></table>-->
-        <table tableName="SysRole" domainObjectName="SysRole" ></table>
-        <table tableName="SysUserRole" domainObjectName="SysUserRole" ></table>
-        <table tableName="UserInfo" domainObjectName="UserInfo" ></table>
+        <table tableName="SysRolePermission" domainObjectName="SysRolePermission" ></table>
+        <table tableName="SysPermission" domainObjectName="SysPermission" ></table>
     </context>
 </generatorConfiguration>
 

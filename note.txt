@@ -1,0 +1,5 @@
+默认提供的静态资源映射如下
+classpath:/META-INF/resources
+classpath:/resources
+classpath:/static
+classpath:/public

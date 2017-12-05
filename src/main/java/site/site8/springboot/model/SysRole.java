@@ -11,6 +11,17 @@ public class SysRole {
 
     private String available;
 
+    public List<SysPermission> getSysPermissions() {
+        return sysPermissions;
+    }
+
+    public void setSysPermissions(List<SysPermission> sysPermissions) {
+        this.sysPermissions = sysPermissions;
+    }
+
+    private List<SysPermission> sysPermissions;
+
+
     public List<UserInfo> getUsers() {
         return users;
     }

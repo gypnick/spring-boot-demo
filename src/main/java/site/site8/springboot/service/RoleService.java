@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface RoleService {
    List<SysRole> queryRoleByid();
+   SysRole selectByPrimaryKey(Integer rId);
 }
